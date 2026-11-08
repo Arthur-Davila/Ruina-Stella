@@ -23,7 +23,7 @@ def build_top_bar() -> ft.Row:
                     ft.IconButton(ft.Icons.NOTIFICATIONS_OUTLINED, icon_color=ft.Colors.WHITE),
                     ft.IconButton(ft.Icons.SETTINGS_OUTLINED, icon_color=ft.Colors.WHITE),
                     ft.CircleAvatar(
-                        foreground_image_src="https://i.pravatar.cc/150?img=11", # Avatar de exemplo
+                        foreground_image_src="", # Avatar de exemplo
                         radius=20,
                     ),
                 ],

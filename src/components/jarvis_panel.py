@@ -8,7 +8,7 @@ def build_jarvis_panel() -> ft.Container:
                 # Cabeçalho
                 ft.Row(
                     [
-                        ft.Row([ft.Text("✨", size=20), ft.Text("Jarvis", weight=ft.FontWeight.BOLD, size=18)]),
+                        ft.Row([ft.Icon(ft.Icons.AUTO_AWESOME, color=ft.Colors.PURPLE_300, size=20), ft.Text("Jarvis", weight=ft.FontWeight.BOLD, size=18)]),
                         ft.Row([ft.Container(width=8, height=8, bgcolor=ft.Colors.GREEN, border_radius=4), ft.Text("Online", size=12, color=ft.Colors.GREEN)]),
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
@@ -22,8 +22,10 @@ def build_jarvis_panel() -> ft.Container:
                             content=ft.Text("O que você acha dessa vaga?", size=13),
                             bgcolor=ft.Colors.with_opacity(0.2, ft.Colors.PURPLE_300),
                             padding=12,
-                            border_radius=ft.BorderRadius.only(top_left=10, top_right=10, bottom_left=10),
-                            alignment=ft.Alignment(1, 0),
+                            border_radius=ft.BorderRadius.only(
+                                top_left=10, top_right=10, bottom_left=10
+                            ),
+                            alignment=ft.Alignment(-1, 0),
                         ),
                         ft.Container(
                             content=ft.Column([
@@ -32,7 +34,9 @@ def build_jarvis_panel() -> ft.Container:
                             ]),
                             bgcolor=ft.Colors.with_opacity(0.05, ft.Colors.WHITE),
                             padding=12,
-                            border_radius=ft.BorderRadius.only(top_left=10, top_right=10, bottom_right=10),
+                            border_radius=ft.BorderRadius.only(
+                                top_left=10, top_right=10, bottom_right=10
+                            ),
                         ),
                     ],
                     spacing=15,

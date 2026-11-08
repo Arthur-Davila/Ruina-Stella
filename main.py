@@ -15,26 +15,29 @@ def main(page: ft.Page):
     # Fundo
     bg_image = ft.Image(src="background8.jpg", fit=ft.BoxFit.COVER, expand=True)
 
-    # Construindo os Componentes
+    # Componentes
     sidebar = build_sidebar()
     top_bar = build_top_bar()
-    dashboard = build_dashboard()
+    dashboard = build_dashboard(page)
     jarvis = build_jarvis_panel()
 
-    # Área central agrupada
+    # Área central (TopBar fixo em cima, Dashboard solto abaixo)
     center_area = ft.Container(
-        content=ft.Column([top_bar, dashboard], expand=True),
+        content=ft.Column([
+            top_bar,
+            ft.Container(content=dashboard, expand=True) # Onde os cards flutuam
+        ], expand=True),
         padding=30,
         expand=True,
     )
 
-    # Layout Principal (Row dividindo a tela)
+    # Layout Principal
     main_ui = ft.Container(
         content=ft.Row(
             [
                 ft.Container(sidebar, width=240),
                 center_area,
-                ft.Container(jarvis, padding=ft.padding.Padding(top=30, right=30, bottom=30)),
+                ft.Container(jarvis, padding=ft.Padding.only(top=30, right=30, bottom=30)),
             ],
             expand=True,
             spacing=0,
@@ -43,7 +46,7 @@ def main(page: ft.Page):
         expand=True,
     )
 
-    # Stack juntando Fundo + Overlay + Interface
+    # Stack Principal
     layout = ft.Stack(
         controls=[
             ft.Container(content=bg_image, expand=True),

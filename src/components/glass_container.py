@@ -7,18 +7,16 @@ def create_glass_card(content, width=None, height=None, padding=20, expand=False
         height=height,
         padding=padding,
         expand=expand,
-        # Gradiente escuro e transparente (fosco)
         gradient=ft.LinearGradient(
-            begin=ft.alignment.top_left,
-            end=ft.alignment.bottom_right,
+            begin=ft.Alignment.TOP_LEFT,
+            end=ft.Alignment.BOTTOM_RIGHT,
             colors=[
-                ft.Colors.with_opacity(0.6, "#1e1e2e"), # Topo esquerdo mais claro
-                ft.Colors.with_opacity(0.2, "#11111b")  # Fundo direito quase preto
+                ft.Colors.with_opacity(0.6, "#1e1e2e"),
+                ft.Colors.with_opacity(0.2, "#11111b")
             ]
         ),
-        border=ft.border.all(1, ft.Colors.with_opacity(0.05, ft.Colors.WHITE)), # Borda quase invisível
+        border=ft.Border.all(1, ft.Colors.with_opacity(0.05, ft.Colors.WHITE)),
         border_radius=16,
-        # Sombra para dar profundidade (dá o aspecto fosco sem precisar de blur pesado)
         shadow=ft.BoxShadow(
             blur_radius=20,
             color=ft.Colors.with_opacity(0.4, ft.Colors.BLACK),
